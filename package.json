@@ -1,7 +1,7 @@
 {
   "name": "aws-mock-test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample mocking of AWS services",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage=true"
