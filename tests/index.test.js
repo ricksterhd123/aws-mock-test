@@ -1,4 +1,3 @@
-const AWS = require('aws-sdk');
 const AWSMock = require('aws-sdk-mock');
 AWSMock.setSDK('../aws-sdk');
 

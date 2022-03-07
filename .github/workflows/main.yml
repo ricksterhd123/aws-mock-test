@@ -1,0 +1,30 @@
+name: Main workflow
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Run eslint
+        working-directory: ./blog-api
+        run: |
+          npm install
+          npm run lint
+  Test:
+    needs: Lint
+    runs-on: ubuntu-latest
+    environment: development
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: Run unit-tests
+        working-directory: ./blog-api
+        run: |
+          npm install
+          npm run test

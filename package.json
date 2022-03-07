@@ -4,6 +4,7 @@
   "description": "Sample mocking of AWS services",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint .",
     "test": "jest --coverage=true"
   },
   "author": "",
@@ -13,6 +14,8 @@
   },
   "devDependencies": {
     "aws-sdk-mock": "^5.6.2",
+    "eslint": "^8.10.0",
+    "eslint-plugin-jest": "^26.1.1",
     "jest": "^27.5.1"
   }
 }
