@@ -5,7 +5,7 @@ jest.mock('node-fetch', ()=>jest.fn());
 
 AWSMock.setSDK('../aws-sdk');
 
-test('Can read file from S3', async () => {
+test('Succesfully read file from S3', async () => {
     AWSMock.mock('S3', 'getObject', (params, callback) => {
         callback(null, {
             Body: 'hello world',
@@ -19,7 +19,7 @@ test('Can read file from S3', async () => {
     AWSMock.restore('S3');
 });
 
-test('Fails gracefully if failed to read file from S3', async () => {
+test('Fail to read file from S3', async () => {
     AWSMock.mock('S3', 'getObject', (params, callback) => {
         callback(new Error('Failed to read file'), null);
     });
